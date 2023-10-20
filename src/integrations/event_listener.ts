@@ -16,6 +16,7 @@ export class EventListener {
       contractAddress,
       destinationAddress
     );
+    this.blockchain = blockchain;
   }
 
   /**
