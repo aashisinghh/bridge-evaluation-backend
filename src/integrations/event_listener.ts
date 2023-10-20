@@ -1,4 +1,4 @@
-import { Blockchain } from "../enums";
+import {  Blockchain } from "../enums";
 import { TransferEventsProcessor } from "./transfer_events_processor";
 import { BlockchainReader } from "../blockchain_reader";
 import { BLOCK_CONFIRMATIONS } from "../constants";

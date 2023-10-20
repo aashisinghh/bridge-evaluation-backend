@@ -4,18 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-db-migrations": "npx typeorm-ts-node-commonjs migration:generate -d src/data_source.ts",
+    "run-db-migrations": "npx typeorm-ts-node-commonjs migration:run -d src/data_source.ts",
+    "revert-db-migrations": "npx typeorm-ts-node-commonjs migration:revert -d src/data_source.ts",
+    "start-db": "docker-compose up -d",
+    "start:dev": "npx nodemon"
   },
-  "keywords": [],
+  "keywords": [
+    "crypto",
+    "xchain",
+    "blockchain"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.8.0",
-    "nodemon": "^2.0.22"
+    "@types/uuid": "^9.0.6",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "ethers": "^6.8.0",
     "pg": "^8.11.3",
-    "typeorm": "^0.3.17"
+    "typeorm": "^0.3.17",
+    "uuid": "^9.0.1"
   }
 }
