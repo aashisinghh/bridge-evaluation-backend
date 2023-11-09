@@ -37,7 +37,6 @@ export class EventListener {
   }
 
   async ensureLastIndexedBlocks() {
-    // TODO(felix): make this sync with the last indexed block
     // const hiddenTransactionLastIndexedBlock = await BlockchainIndexingStatus.findOne(
     //   this.blockchain,
     //   BlockchainIndexType.HIDDEN_TRANSACTION_SUBMISSION
