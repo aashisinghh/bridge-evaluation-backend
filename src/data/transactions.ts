@@ -67,7 +67,6 @@ export class Transaction {
   }
 
   async validate(): Promise<void> {
-    // TODO(felix): validate the address and make sure it actually meets the format
     this.sourceTransactionHash = this.sourceTransactionHash.trim().toLowerCase();
     this.from = this.from?.trim();
   }
