@@ -67,6 +67,7 @@ export class Transaction {
   }
 
   async validate(): Promise<void> {
+    // TODO(felix): validate the address and make sure it actually meets the format
     this.sourceTransactionHash = this.sourceTransactionHash.trim().toLowerCase();
     this.from = this.from?.trim();
   }
@@ -91,7 +92,8 @@ export class Transaction {
     transaction.sourceBlockchain = blockchain
     transaction.sourceBlockchainGas = Number(transferDetails.gasUsed)
     transaction.sourceBlockchainGasPrice  = Number(transferDetails.gasPrice)
-    // transaction.initiatedAt = transferDetails.transactionMetaData?.initiatedAt!;
+    // transaction.sourceBlockchainNativeTokenPrice // TODO(felix): get this from coingecko API
+    transaction.initiatedAt = transferDetails.transactionMetaData?.initiatedAt!;
 
     const insertResult = await AppDataSource.manager
       .createQueryBuilder()
