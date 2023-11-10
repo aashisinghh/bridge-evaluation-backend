@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "yarn jest --maxWorkers=1",
     "create-db-migrations": "npx typeorm-ts-node-commonjs migration:generate -d src/data_source.ts",
     "run-db-migrations": "npx typeorm-ts-node-commonjs migration:run -d src/data_source.ts",
     "revert-db-migrations": "npx typeorm-ts-node-commonjs migration:revert -d src/data_source.ts",
